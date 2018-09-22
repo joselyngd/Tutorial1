@@ -1,5 +1,3 @@
-//https://github.com/joselyngd/Tutorial1.git
-
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
@@ -40,6 +38,11 @@ public class PlayerController : MonoBehaviour
             count = count + 1;
             SetCountText();
         }
+
+        if (count == 12)
+        {
+            transform.position = new Vector3(-28.71f, y: 0.5f, z: -5.64f);
+        }
     }
 
     void SetCountText()
@@ -47,7 +50,7 @@ public class PlayerController : MonoBehaviour
         countText.text = "Count: " + count.ToString();
         if (count >= 12)
         {
-            winText.text = "You Win!";
+            winText.text = "You won with game with a score of: " + count.ToString();
         }
     }
     public void Update()
